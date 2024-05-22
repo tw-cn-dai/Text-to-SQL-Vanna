@@ -21,7 +21,7 @@ class MyVanna(ChromaDB_VectorStore, OpenAI_Chat):
         OpenAI_Chat.__init__(self, config=config)
         
 vn = MyVanna(config={
-                'base_url':"http://bj.private.gluon-meson.tech:11000/model-proxy/v1", 
+                'base_url':"https://api.openai.com/v1", 
                 'api_key': 'sk-...', 
                 'model': 'gpt-4-...',
                 'path': dir_to_save_vector_db
