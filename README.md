@@ -55,10 +55,12 @@ The information schema query may need some tweaking depending on your database. 
 
     df_information_schema = vn.run_sql("SELECT * FROM INFORMATION_SCHEMA.COLUMNS")
 
-This will break up the information schema into bite-sized chunks that can be referenced by the LLM
+This will break up the information schema into bite-sized chunks that can be referenced by the LLM.
+    
     plan = vn.get_training_plan_generic(df_information_schema)
 
 If you like the plan, then uncomment this and run it to train
+    
     vn.train(plan=plan)
 
 
