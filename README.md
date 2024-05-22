@@ -67,6 +67,7 @@ vn.train(plan=plan)
 # **Demo**
 
 Please refer to infer.py, which trains RAG based on the train set of the bird dataset, with california_schools from the dev set used as the test set, and chromaDB+GPT4 as the backend.
+
 After running the infer.py code, a web application will be created, allowing for SQL generation tasks to be performed on the web interface.
 
 # **DataBase**
