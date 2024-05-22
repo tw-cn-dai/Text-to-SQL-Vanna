@@ -82,10 +82,10 @@ def run():
                 'path':'data/chromadb'
                 })
     vn.connect_to_sqlite('./data/test_data/california_schools.sqlite')
-    #remove_trained_data(vn)
-    #train_ddl(vn)
-    #train_model(vn)
-    #train_document(vn)
+    remove_trained_data(vn)
+    train_ddl(vn)
+    train_model(vn)
+    train_document(vn)
     suggested_db_name = 'california_schools'
     suggested_db_path =  'data/test_data/dev.json'
     app = VannaFlaskApp(vn, suggested_db_name=suggested_db_name, suggested_db_path=suggested_db_path)
