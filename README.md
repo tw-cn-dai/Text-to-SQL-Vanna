@@ -1,4 +1,4 @@
-# text2sql-vanna
+# Text-to-SQL-Vanna
 Text to SQL generation via Vanna.   
 
 This repo works in two easy steps - train a RAG "model" on your data, and then ask questions which will return SQL queries that can be set up to automatically run on your database.
