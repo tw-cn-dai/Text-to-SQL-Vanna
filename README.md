@@ -29,8 +29,7 @@ Please refer to  https://github.com/vanna-ai/vanna  for information related to V
 # **Training**
 ## **Train with DDL Statements**
 DDL statements contain information about the table names, columns, data types, and relationships in your database.
-
-vn.train(ddl="""
+    vn.train(ddl="""
         CREATE TABLE IF NOT EXISTS my-table (
             id INT PRIMARY KEY,
             name VARCHAR(100),
@@ -40,27 +39,27 @@ vn.train(ddl="""
 ## **Train with Documentation**
 Sometimes you may want to add documentation about your business terminology or definitions.
 
-vn.train(documentation="Our business defines XYZ as ...")
+    vn.train(documentation="Our business defines XYZ as ...")
 
 ## **Train with SQL**
 
-vn.train(sql="SELECT name, age FROM my-table WHERE name = 'John Doe'")
+    vn.train(sql="SELECT name, age FROM my-table WHERE name = 'John Doe'")
 
 ## **Train with SQL-Question pairs**
-vn.train(
+    vn.train(
         question="Name movie titles released in year 1945. Sort the listing by the descending order of movie popularity",
          sql="SELECT movie_title FROM movies WHERE movie_release_year = 1945 ORDER BY movie_popularity DESC LIMIT 1"
          )
 ## **Train plan**
 The information schema query may need some tweaking depending on your database. This is a good starting point.
 
-df_information_schema = vn.run_sql("SELECT * FROM INFORMATION_SCHEMA.COLUMNS")
+    df_information_schema = vn.run_sql("SELECT * FROM INFORMATION_SCHEMA.COLUMNS")
 
 This will break up the information schema into bite-sized chunks that can be referenced by the LLM
-plan = vn.get_training_plan_generic(df_information_schema)
+    plan = vn.get_training_plan_generic(df_information_schema)
 
 If you like the plan, then uncomment this and run it to train
-vn.train(plan=plan)
+    vn.train(plan=plan)
 
 
 # **Demo**
