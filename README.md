@@ -14,13 +14,12 @@ Please refer to  https://github.com/vanna-ai/vanna  for information related to V
     pip install -e .
 
 # **Import**
-
-class MyVanna(ChromaDB_VectorStore, OpenAI_Chat):
-    def __init__(self, config=None):
-        ChromaDB_VectorStore.__init__(self, config=config)
-        OpenAI_Chat.__init__(self, config=config)
+    class MyVanna(ChromaDB_VectorStore, OpenAI_Chat):
+        def __init__(self, config=None):
+            ChromaDB_VectorStore.__init__(self, config=config)
+            OpenAI_Chat.__init__(self, config=config)
         
-vn = MyVanna(config={
+    vn = MyVanna(config={
                 'base_url':"https://api.openai.com/v1", 
                 'api_key': 'sk-...', 
                 'model': 'gpt-4-...',
